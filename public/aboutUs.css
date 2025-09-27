@@ -1,0 +1,476 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Poppins", sans-serif;
+    background-color: #ffffff;
+    color: #2c3e50;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+}
+
+/* ===== UTILITIES ===== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ===== LINKS ===== */
+a {
+    text-decoration: none;
+    color: #3498db;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #1f618d 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+}
+
+/* ===== HEADER ===== */
+.header-main {
+    background-color: #ffffff;
+    color: #2c3e50;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 100px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e1e8ed;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    gap: 40px;
+}
+
+.logo img {
+    width: 200px;
+    height: auto;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #3498db;
+}
+
+.nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: #ffffff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #3498db;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(52, 152, 219, 0.2);
+}
+
+.nav-link:hover {
+    background-color: #2980b9;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+/* ===== HERO SECTION ===== */
+.hero-about {
+    background: transparent;
+    color: #2c3e50;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-about h1 {
+    font-size: 2.75rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #111827;
+}
+
+.hero-about p {
+    font-size: 1.125rem;
+    color: #6b7280;
+}
+
+/* ===== PROJECT OVERVIEW ===== */
+.project-overview {
+    padding: 64px 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.project-overview h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #111827;
+}
+
+.project-overview p {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 1rem;
+    color: #4b5563;
+}
+
+/* ===== TEAM SECTION ===== */
+.team {
+    padding: 64px 0;
+    background-color: #f9fafb;
+    text-align: center;
+}
+
+.team h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #111827;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.member {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 30px 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(52, 152, 219, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.member:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    border-color: rgba(52, 152, 219, 0.2);
+}
+
+.member img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    align-self: center;
+}
+
+.member h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #2c3e50, #3498db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.member p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+/* ===== PROJECT GOALS ===== */
+.project-goals {
+    padding: 64px 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.project-goals h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #111827;
+}
+
+.project-goals ul {
+    max-width: 720px;
+    margin: 0 auto;
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #4b5563;
+    font-size: 1rem;
+    text-align: left;
+}
+
+/* ===== CALL TO ACTION ===== */
+.call-to-action {
+    padding: 64px 0;
+    background-color: #f9fafb;
+    color: #111827;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.call-to-action h2 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.call-to-action p {
+    font-size: 1.0625rem;
+    margin-bottom: 24px;
+    color: #4b5563;
+}
+
+.call-to-action .btn-primary {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.call-to-action:hover {
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background-color: #2c3e50;
+    color: #ffffff;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .header-main {
+        padding: 15px 40px;
+        gap: 30px;
+    }
+
+    .logo img {
+        width: 180px;
+    }
+
+    .nav {
+        gap: 15px;
+    }
+
+    .hero-about {
+        padding: 80px 0;
+    }
+
+    .hero-about h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-about p {
+        font-size: 1.1rem;
+    }
+
+    .project-overview {
+        padding: 60px 0;
+    }
+
+    .project-overview h2 {
+        font-size: 2rem;
+    }
+
+    .project-overview p {
+        font-size: 1rem;
+    }
+
+    .team {
+        padding: 60px 0;
+    }
+
+    .team h2 {
+        font-size: 2rem;
+    }
+
+    .team-members {
+        gap: 30px;
+    }
+
+    .member {
+        width: 45%;
+    }
+
+    .project-goals {
+        padding: 60px 0;
+    }
+
+    .project-goals h2 {
+        font-size: 2rem;
+    }
+
+    .project-goals ul {
+        font-size: 1rem;
+    }
+
+    .call-to-action {
+        padding: 60px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-main {
+        padding: 15px 20px;
+        gap: 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo img {
+        width: 150px;
+    }
+
+    .nav {
+        gap: 10px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background-color: #3498db;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+        z-index: 200;
+    }
+
+    .nav.nav-open {
+        display: flex;
+    }
+
+    .hero-about {
+        padding: 60px 0;
+    }
+
+    .hero-about h1 {
+        font-size: 2rem;
+    }
+
+    .hero-about p {
+        font-size: 1rem;
+    }
+
+    .project-overview {
+        padding: 60px 0;
+    }
+
+    .project-overview h2 {
+        font-size: 1.75rem;
+    }
+
+    .project-overview p {
+        font-size: 0.9rem;
+    }
+
+    .team {
+        padding: 60px 0;
+    }
+
+    .team h2 {
+        font-size: 1.75rem;
+    }
+
+    .team-members {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .member {
+        width: 100%;
+    }
+
+    .project-goals {
+        padding: 60px 0;
+    }
+
+    .project-goals h2 {
+        font-size: 1.75rem;
+    }
+
+    .project-goals ul {
+        font-size: 0.9rem;
+    }
+
+    .call-to-action {
+        padding: 60px 20px;
+    }
+}

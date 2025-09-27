@@ -1,0 +1,119 @@
+ :root {
+                --text: #2c3e50;
+                --muted: #617484;
+                --border: #e1e8ed;
+                --bg: #ffffff;
+                --bg-soft: #f7faff;
+                --primary: #3498db;
+                --primary-600: #2c82bd;
+                --shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+            }
+            html, body { margin: 0; padding: 0; }
+            body { color: var(--text); background: var(--bg); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif; line-height: 1.5; }
+
+            .profileHeader { border-bottom: 1px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 20; padding: 10px 16px; }
+            .profileHeader strong { font-size: 1.05rem; color: var(--text); }
+            .logoImg img { height: 150px; width: auto; }
+
+            .hero {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 50vh;
+                text-align: center;
+                padding: 30px 13px;
+                background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+            }
+            .brand {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 16px;
+            }
+            .brand img { height: clamp(40px, 5vw, 64px); width: auto; max-width: 100%; }
+            .brand h1 { font-size: clamp(1.6rem, 2.5vw + 1rem, 2.6rem); color: var(--text); letter-spacing: -0.02em; }
+            .subtitle { color: var(--muted); max-width: 820px; font-size: 1.05rem; }
+            .cta { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+            .cta a {
+                padding: 12px 18px;
+                border-radius: 10px;
+                font-weight: 600;
+                border: 1px solid var(--border);
+                background: #ffffff;
+                color: var(--text);
+                text-decoration: none;
+                transition: all .18s ease;
+            }
+            .cta a:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+            .cta a.primary { background: var(--primary); color: #fff; border-color: var(--primary); }
+            .cta a.primary:hover { background: var(--primary-600); }
+
+            .container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+            .sections { max-width: 1120px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+            .card { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 20px; box-shadow: var(--shadow); }
+            .card h3 { color: var(--text); margin-bottom: 8px; font-size: 1.1rem; }
+            .card p { color: var(--muted); margin: 0; }
+            .card:hover { transform: translateY(-2px); transition: transform .18s ease; }
+
+            .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+            .muted { color: var(--muted); }
+
+            .stats { background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+            .stats .inner { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; padding: 26px 0; }
+            .stat { text-align: center; }
+            .stat .num { font-weight: 800; font-size: 1.6rem; color: var(--text); }
+            .stat .label { color: var(--muted); font-size: .95rem; }
+
+            .footer { text-align: center; color: #999; padding: 24px; border-top: 1px solid var(--border); background: #fff; }
+
+            @media (max-width: 640px) {
+                .profileHeader { padding: 8px 12px; }
+                .logoImg img { height: 72px; }
+                .hero { min-height: 46vh; padding: 22px 12px; }
+                .brand { gap: 8px; }
+                .brand img { height: 40px; }
+                .brand h1 { font-size: 1.7rem; }
+                .subtitle { font-size: 1rem; padding: 0 4px; }
+                .cta { gap: 10px; }
+                .cta a { padding: 11px 14px; font-size: 0.95rem; }
+                .sections { margin: 28px auto; gap: 14px; }
+                .card { padding: 16px; }
+                .grid-3 { gap: 12px; }
+                .stats .inner { grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 18px 0; }
+                .stat .num { font-size: 1.4rem; }
+                .stat .label { font-size: .9rem; }
+                .footer { padding: 18px; font-size: .9rem; }
+            }
+
+            @media (max-width: 400px) {
+                .brand h1 { font-size: 1.4rem; }
+                .subtitle { font-size: 0.95rem; }
+                .cta a { width: 100%; text-align: center; }
+                .stats .inner { grid-template-columns: 1fr; }
+            }
+
+            @media (min-width: 641px) and (max-width: 1024px) {
+                .hero { min-height: 52vh; padding: 36px 20px; }
+                .subtitle { font-size: 1.05rem; }
+                .cta a { padding: 12px 18px; font-size: 1rem; }
+                .sections { margin: 36px auto; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+                .card { padding: 22px; }
+                .grid-3 { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+                .stats .inner { grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 22px 0; }
+            }
+
+            @media (min-width: 1025px) {
+                .container { max-width: 1280px; }
+                .sections { max-width: 1280px; grid-template-columns: repeat(3, 1fr); }
+                .subtitle { font-size: 1.1rem; }
+                .stat .num { font-size: 1.8rem; }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                * { animation: none !important; transition: none !important; }
+                .cta a:hover, .card:hover { transform: none !important; }
+            }
+
+            img { max-width: 100%; height: auto; }

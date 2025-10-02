@@ -21,7 +21,7 @@
         <nav class="nav" id="primary-nav">
             <a href="{{ route('company') }}" class="nav-link">Home</a>
             <!-- <a href="#spotlight" class="nav-link">Company Spotlight</a> -->
-            <a href="" class="nav-link">Post Job</a>
+            <a href="{{ route('jobpost') }}" class="nav-link">Post Job</a>
             <a href="" class="nav-link">View Jobs</a>
             <a href="{{ route('aboutUs') }}" class="nav-link">About Us</a>
             <a href="{{ route('contactUs') }}" class="nav-link">Contact Us</a>

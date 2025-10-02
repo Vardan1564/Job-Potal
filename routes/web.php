@@ -3,6 +3,7 @@
 use App\Http\Controllers\authController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\contactUsController;
+use App\Http\Controllers\jobPostController;
 use App\Http\Controllers\signupProcessController;
 use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
@@ -75,3 +76,9 @@ Route::get('/Contact-Us',[contactUsController::class,'contactUs'])->name('contac
 
 // store contact form data
 Route::post('/Contact-Us',[contactUsController::class,'storeContact'])->name('contactUs.store');
+
+// view job post page
+Route::get('/jobpost',[jobPostController::class,'jobpost'])->name('jobpost');
+
+//save job post data
+Route::post('/jobpost/save',[jobPostController::class,'jobpost_save'])->name('jobpost_save');

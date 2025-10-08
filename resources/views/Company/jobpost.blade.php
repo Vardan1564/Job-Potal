@@ -24,8 +24,7 @@
         <nav class="nav" id="primary-nav">
             <a href="{{ route('company') }}" class="nav-link">Home</a>
             <a href="{{route('jobpost')}}" class="nav-link active" aria-current="page">Post Job</a>
-            <a href="{{ route('aboutUs') }}" class="nav-link">About</a>
-            <a href="{{ route('contactUs') }}" class="nav-link">Contact</a>
+            <a href="{{ route('allCompanyJobs') }}" class="nav-link active" aria-current="page">All Company's Jobs</a>
             <div class="account" id="account">
                 <button class="account-toggle" id="accountToggle" aria-haspopup="true" aria-expanded="false">Account ▾</button>
                 <div class="account-menu" id="accountMenu" role="menu">

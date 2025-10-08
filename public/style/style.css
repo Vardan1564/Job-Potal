@@ -437,6 +437,41 @@ a:hover {
   box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
 }
 
+/* Profile action buttons */
+.edit-profile-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 1px solid #e1e8ed;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(52, 152, 219, 0.2);
+}
+
+.edit-profile-btn:hover {
+  background-color: #2980b9;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #2c3e50;
+  border-color: #3498db;
+}
+
+.btn-secondary:hover {
+  background-color: #ecf5fc;
+  color: #2c3e50;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .profileHeader {

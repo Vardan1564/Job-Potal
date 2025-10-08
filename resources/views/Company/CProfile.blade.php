@@ -83,6 +83,11 @@
                     Edit Profile
                     <span class="material-symbols-outlined" aria-hidden="true">edit</span>
                 </a>
+                <a href="{{ route('companyJobs') }}" class="edit-profile-btn btn-secondary" title="View your job posts"
+                    style="display: flex;flex-direction: row;align-items: center;justify-content: center;margin: 20px 0">
+                    Your Post
+                    <span class="material-symbols-outlined" aria-hidden="true">list_alt</span>
+                </a>
             </div>
         </aside>
 

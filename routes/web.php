@@ -82,3 +82,12 @@ Route::get('/jobpost',[jobPostController::class,'jobpost'])->name('jobpost');
 
 //save job post data
 Route::post('/jobpost/save',[jobPostController::class,'jobpost_save'])->name('jobpost_save');
+
+// list job posts
+Route::get('/job-listings',[jobPostController::class,'list_jobs'])->name('jobListings');
+
+// company(loged in) job posts
+Route::get('/your-jobs',[jobPostController::class,'company_jobs'])->name('companyJobs');
+
+// all company jobs for company 
+Route::get('/all-company-jobs',[jobPostController::class,'list_jobs_for_company_page'])->name('allCompanyJobs');

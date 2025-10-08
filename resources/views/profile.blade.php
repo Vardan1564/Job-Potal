@@ -111,6 +111,10 @@
                         Edit Profile
                         <span class="material-symbols-outlined" aria-hidden="true">edit</span>
                     </a>
+                    <a href="{{ route('jobListings') }}" class="edit-profile-btn btn-secondary" title="Browse and apply to jobs" style="display: flex;flex-direction: row;align-items: center;justify-content: center;margin: 20px 0">
+                        Applied Jobs
+                        <span class="material-symbols-outlined" aria-hidden="true">list_alt</span>
+                    </a>
                 </div>
             </aside>
 

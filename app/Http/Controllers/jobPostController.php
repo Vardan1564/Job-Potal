@@ -46,10 +46,29 @@ class jobPostController extends Controller
         $job->salary_range     = $request->salary_range;
         $job->Email            = $request->email;
         $job->active_or_not    = 1; // default active
-
+        $job->profile_photo    = $company->profile_photo; // company profile photo
         $job->save();
 
         return redirect()->route('company');
 
+    }
+
+    // list job posts for seeker
+    public function list_jobs(){
+        $jobs = jobPostModel::where('active_or_not', 1)->get();
+        return view('User.job-listings', compact('jobs'));
+    }
+
+    // list job posts for loged-in company
+    public function company_jobs(){
+        $company = Auth::user();
+        $jobs = jobPostModel::where('company_id', $company->id)->get();
+        return view('Company.your-jobs', compact('jobs'));
+    }
+
+    // list job posts for company page
+    public function list_jobs_for_company_page(){
+        $jobs = jobPostModel::where('active_or_not', 1)->get();
+        return view('company.all-company-jobs', compact('jobs'));
     }
 }

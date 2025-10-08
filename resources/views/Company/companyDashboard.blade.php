@@ -20,17 +20,13 @@
         </button>
         <nav class="nav" id="primary-nav">
             <a href="{{ route('company') }}" class="nav-link">Home</a>
-            <!-- <a href="#spotlight" class="nav-link">Company Spotlight</a> -->
-            <a href="{{ route('jobpost') }}" class="nav-link">Post Job</a>
-            <a href="" class="nav-link">View Jobs</a>
-            <a href="{{ route('aboutUs') }}" class="nav-link">About Us</a>
-            <a href="{{ route('contactUs') }}" class="nav-link">Contact Us</a>
+            <a href="{{route('jobpost')}}" class="nav-link active" aria-current="page">Post Job</a>
+            <a href="{{ route('allCompanyJobs') }}" class="nav-link active" aria-current="page">All Company's Jobs</a>
             <div class="account" id="account">
-                <button class="account-toggle" id="companyAccountToggle" aria-haspopup="true"
-                    aria-expanded="false">Account ▾</button>
-                <div class="account-menu" id="companyAccountMenu" role="menu">
-                    <a href="{{ route('profile') }}" class="dropdown-link" role="menuitem">Profile View</a>
-                    <a href="{{ route('signin' ) }}" class="dropdown-link" role="menuitem">Sign Out</a>
+                <button class="account-toggle" id="accountToggle" aria-haspopup="true" aria-expanded="false">Account ▾</button>
+                <div class="account-menu" id="accountMenu" role="menu">
+                    <a href="{{ route('Cprofile') }}" class="dropdown-link" role="menuitem">Profile</a>
+                    <a href="{{ route('signin') }}" class="dropdown-link" role="menuitem">Sign Out</a>
                 </div>
             </div>
         </nav>

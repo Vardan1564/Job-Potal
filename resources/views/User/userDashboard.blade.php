@@ -21,7 +21,7 @@
         </button>
         <nav class="nav" id="primary-nav">
             <a href="{{ route('user') }}" class="nav-link">Home</a>
-            <a href="#search" class="nav-link">View Jobs</a>
+            <a href="{{ route('jobListings') }}" class="nav-link">View Jobs</a>
             <a href="user-apply.html" class="nav-link">Job Apply</a>
             <a href="internships.html" class="nav-link">Internships</a>
             <a href="{{ route('aboutUs') }}" class="nav-link">About Us</a>

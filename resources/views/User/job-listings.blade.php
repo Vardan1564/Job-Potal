@@ -22,11 +22,11 @@
       <span class="bar"></span>
       <span class="bar"></span>
     </button>
-    <nav class="nav" id="primary-nav">
+ <nav class="nav" id="primary-nav">
             <a href="{{ route('user') }}" class="nav-link">Home</a>
             <a href="{{ route('jobListings') }}" class="nav-link">View Jobs</a>
-            <a href="user-apply.html" class="nav-link">Job Apply</a>
-            <a href="internships.html" class="nav-link">Internships</a>
+            <a href="{{ route('userApplicationsList') }}" class="nav-link">Job Application</a>
+            <a href="{{ route('internships') }}" class="nav-link">Internships</a>
             <a href="{{ route('aboutUs') }}" class="nav-link">About Us</a>
             <a href="{{ route('contactUs') }}" class="nav-link">Contact Us</a>
             <div class="account" id="account">
@@ -40,6 +40,18 @@
         </nav>
   </header>
 
+  @if (session('success'))
+    <div class="alert alert-success">
+      {{ session('success') }}
+    </div>
+  @endif
+
+  @if (session('error'))
+    <div class="alert alert-danger">
+      {{ session('error') }}
+    </div>
+  @endif
+  
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
@@ -104,8 +116,8 @@
         <p class="job-meta">{{ $job->jobtype }} • {{ $job->experience_level }}</p>
         <p class="job-desc">{{ $job->job_description }}</p>
         <div class="card-actions">
-            <a href="job-detail.html" class="btn btn-outline">View Details</a>
-            <a href="user-apply.html" class="btn btn-primary">Apply</a>
+            <a href="{{ route('jobDetail',$job->id) }}" class="btn btn-outline">View Details</a>
+            <a href="{{ route('applyJob',['c_id' => $job->company_id, 'j_id' => $job->id,'company_name'=>$job->company_name,'job_title'=>$job->jobtitle,'city'=>$job->city,'state'=>$job->state]) }}" class="btn btn-primary">Apply</a>
         </div>
     </article>
     

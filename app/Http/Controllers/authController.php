@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Models\User;
+use App\Models\jobPostModel;
 class authController extends Controller
 {
     public function loginProcess(Request $req)
@@ -11,12 +13,14 @@ class authController extends Controller
         $email=$req->email ;
         $password=$req->password;
 
+    
+
         if(Auth::attempt(['email'=>$email , 'password'=>$password]))
         {
             
             if(Auth::user()->role=='admin')
             {
-                return redirect('admin',);
+                return redirect('admin');
             }
             elseif(Auth::user()->role=='user')
             {

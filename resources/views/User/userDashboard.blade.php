@@ -22,8 +22,8 @@
         <nav class="nav" id="primary-nav">
             <a href="{{ route('user') }}" class="nav-link">Home</a>
             <a href="{{ route('jobListings') }}" class="nav-link">View Jobs</a>
-            <a href="user-apply.html" class="nav-link">Job Apply</a>
-            <a href="internships.html" class="nav-link">Internships</a>
+            <a href="{{ route('userApplicationsList') }}" class="nav-link">Job Application</a>
+            <a href="{{ route('internships') }}" class="nav-link">Internships</a>
             <a href="{{ route('aboutUs') }}" class="nav-link">About Us</a>
             <a href="{{ route('contactUs') }}" class="nav-link">Contact Us</a>
             <div class="account" id="account">
@@ -99,21 +99,18 @@
                         <p class="company">Tech Solutions Inc.</p>
                         <p class="location">Remote</p>
                         <p class="description">Build responsive UI with React and modern tooling.</p>
-                        <a href="#" class="btn btn-primary">Apply Now</a>
                     </article>
                     <article class="job-item">
                         <h3>Data Analyst</h3>
                         <p class="company">Data Insights</p>
                         <p class="location">Surat</p>
                         <p class="description">Transform data into business decisions and insights.</p>
-                        <a href="#" class="btn btn-primary">Apply Now</a>
                     </article>
                     <article class="job-item">
                         <h3>Mobile Engineer</h3>
                         <p class="company">AppWorks</p>
                         <p class="location">Ahmedabad</p>
                         <p class="description">Deliver delightful mobile experiences at scale.</p>
-                        <a href="#" class="btn btn-primary">Apply Now</a>
                     </article>
                 </div>
             </div>

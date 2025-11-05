@@ -6,6 +6,9 @@ use App\Http\Controllers\contactUsController;
 use App\Http\Controllers\jobPostController;
 use App\Http\Controllers\signupProcessController;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\internshipsController;
+use App\Http\Controllers\adminAllOprationController;
+use App\Http\Controllers\applyJobController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -15,7 +18,7 @@ Route::get('/', function () {
 
 // admin
 Route::get('/admin', function () {
-    return view('Admin.AdminDashboard');
+    return view('Admin.adminDashboard');
 })->name("admin");
 
 //Company
@@ -91,3 +94,39 @@ Route::get('/your-jobs',[jobPostController::class,'company_jobs'])->name('compan
 
 // all company jobs for company 
 Route::get('/all-company-jobs',[jobPostController::class,'list_jobs_for_company_page'])->name('allCompanyJobs');
+
+// internships page
+Route::get('/internships',[internshipsController::class,'showInternships'])->name('internships');
+
+// job detail page
+Route::get('/job-detail/{id}',[jobPostController::class,'job_detail'])->name('jobDetail');
+
+//admin dashboard
+// Route::get('/admin/dashboard',[adminAllOprationController::class,'dashboard'])->name('admin');
+
+//admin users management
+Route::get('/admin/manage-users',[adminAllOprationController::class,'manageUsers'])->name('adminManageUsers'); 
+
+//admin companies management
+Route::get('/admin/manage-companies',[adminAllOprationController::class,'manageCompanies'])->name('adminManageCompanies');
+
+//admin jobs management
+Route::get('/admin/manage-jobs',[adminAllOprationController::class,'manageJobs'])->name('adminManageJobs');
+
+//admin analysis
+Route::get('/admin/analysis',[adminAllOprationController::class,'analysis'])->name('adminAnalysis');
+
+//apply job
+Route::get('/apply/job/{j_id}/{c_id}/{company_name}/{job_title}/{city}/{state}',[applyJobController::class,'apply'])->name('applyJob');
+
+//user job applications list
+Route::get('/user/applications',[applyJobController::class,'applicationsList'])->name('userApplicationsList');
+
+// applicatants for a job post
+Route::get('/company/applicants/{id}',[jobPostController::class,'viewApplicants'])->name('viewApplicants');
+
+//view applicants profile
+Route::get('/company/applicant/profile/{id}',[applyJobController::class,'applicantProfile'])->name('applicantProfile');
+
+//admin applications management
+Route::get('/admin/manage-applications',[adminAllOprationController::class,'manageApplications'])->name('adminManageApplications');

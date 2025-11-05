@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\applyJobModel;
 use Illuminate\Database\Eloquent\Model;
 
 class jobPostModel extends Model
@@ -23,4 +23,9 @@ class jobPostModel extends Model
         'email',
         'active_or_not',
     ];
+
+//     public function applications()
+// {
+//     return $this->hasMany(applyJobModel::class, 'J_ID', 'id');
+// }
 }

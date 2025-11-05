@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\applyJobModel;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\jobPostModel;
@@ -70,5 +70,17 @@ class jobPostController extends Controller
     public function list_jobs_for_company_page(){
         $jobs = jobPostModel::where('active_or_not', 1)->get();
         return view('company.all-company-jobs', compact('jobs'));
+    }
+
+    // job detail page using id
+    public function job_detail($id){
+        $job = jobPostModel::where('id', $id)->first();
+        return view('User.jobDetail', compact('job'));
+    }
+
+    // see your post's applicants applications
+    public function viewApplicants($id){
+            $applications = applyJobModel::where('J_ID', $id)->get();
+            return view('company.applicants', compact('applications'));
     }
 }

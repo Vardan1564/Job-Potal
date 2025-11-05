@@ -61,7 +61,7 @@
         <p class="job-meta">{{ $job->jobtype }} • {{ $job->experience_level }}</p>
         <p class="job-desc">{{ $job->job_description }}</p>
         <div class="card-actions">
-            <a href="job-detail.html" class="btn btn-outline">View Details</a>
+            <a href="{{ route('jobDetail',$job->id) }}" class="btn btn-outline">View Details</a>
             
         </div>
     </article>

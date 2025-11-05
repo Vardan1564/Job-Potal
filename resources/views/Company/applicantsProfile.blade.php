@@ -10,7 +10,8 @@
         <title>Profile Page | CareerLink</title>
 
         <!-- External CSS -->
-        <link rel="stylesheet" href="../style/style.css" />
+        <link rel="stylesheet" href="{{ asset('style/style.css') }}" />
+        <link rel="stylesheet" href="{{ asset('style/landing-common.css') }}">
 
         <!-- Google Icons -->
         <link
@@ -19,6 +20,7 @@
         />
     </head>
     <body>
+
 
          <!-- SweetAlert2 for flash messages -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -39,20 +41,20 @@
         <!-- Header -->
         <header class="profileHeader" role="banner">
             <a href="#" class="logoImg">
-                <img src="../Images/Logo/logo_2.png" alt="CareerLink logo" />
+                <img src="{{ asset('Images/Logo/logo_2.png') }}" alt="CareerLink logo" />
             </a>
-            <nav
-                class="signOutLink"
-                role="navigation"
-                aria-label="User  account actions"
-            >
-                <a href="{{ route('signin') }}" title="Sign out of your account">
-                    Sign Out
-                    <span class="material-symbols-outlined" aria-hidden="true"
-                        >logout</span
-                    >
-                </a>
-            </nav>
+           <nav class="nav" id="primary-nav">
+            <a href="{{ route('company') }}" class="nav-link">Home</a>
+            <a href="{{route('jobpost')}}" class="nav-link active" aria-current="page">Post Job</a>
+            <a href="{{ route('allCompanyJobs') }}" class="nav-link active" aria-current="page">All Company's Jobs</a>
+            <div class="account" id="account">
+                <button class="account-toggle" id="accountToggle" aria-haspopup="true" aria-expanded="false">Account ▾</button>
+                <div class="account-menu" id="accountMenu" role="menu">
+                    <a href="{{ route('Cprofile') }}" class="dropdown-link" role="menuitem">Profile</a>
+                    <a href="{{ route('signin') }}" class="dropdown-link" role="menuitem">Sign Out</a>
+                </div>
+            </div>
+        </nav>
         </header>
 
         <!-- Main Content -->
@@ -106,7 +108,7 @@
                     </p>
                 </div>
 
-                <div class="p-center">
+                <!-- <div class="p-center">
                     <a href="{{ route('seekerEditProfile') }}" class="edit-profile-btn" title="Edit your profile" style="display: flex;flex-direction: row;align-items: center;justify-content: center;margin: 20px 0">
                         Edit Profile
                         <span class="material-symbols-outlined" aria-hidden="true">edit</span>
@@ -115,7 +117,7 @@
                         Applied Jobs
                         <span class="material-symbols-outlined" aria-hidden="true">list_alt</span>
                     </a>
-                </div>
+                </div> -->
             </aside>
 
             <!-- Right Content -->
@@ -187,7 +189,8 @@
 
                 <!-- Job History Section -->
                 <!-- Job History Section -->
-                
+                <script src="{{ asset('script/landing-common.js') }}"></script>
+<script src="{{ asset('script/page-common.js') }}"></script>
             </section>
         </main>
     </body>

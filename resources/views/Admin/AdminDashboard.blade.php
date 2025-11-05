@@ -23,6 +23,7 @@
       <a href="{{ route('adminManageCompanies') }}" class="nav-link">Companies</a>
       <a href="{{ route('adminManageJobs') }}" class="nav-link">Jobs</a>
       <a href="{{ route('adminManageApplications') }}" class="nav-link">Job Applications</a>
+      <a href="{{ route('signin') }}" class="nav-link">Sign Out</a>
     </nav>
   </header>
 

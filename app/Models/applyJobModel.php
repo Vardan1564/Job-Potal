@@ -25,10 +25,4 @@ class applyJobModel extends Model
         'updated_at' => 'datetime',
     ];
 
-    // Disable timestamps if you don't want automatic timestamp management
-    // public $timestamps = false;
-//     public function jobPost()
-// {
-//     return $this->belongsTo(JobPostModel::class, 'J_ID', 'id');
-// }
 }

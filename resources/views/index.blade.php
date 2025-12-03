@@ -37,12 +37,23 @@
                 <h1>Find Your Next Opportunity</h1>
                 <p>Discover roles tailored to your skills with a modern, guided experience.</p>
                 <div class="cta-group">
-                    <a href="#search" class="btn btn-primary">Search Jobs</a>
+                    <!-- <a href="#search" class="btn btn-primary">Search Jobs</a> -->
+                    <a href="#search" id="searchJobsBtn" class="btn btn-primary">Search Jobs</a>
+
                     <a href="#features" class="btn btn-outline">Explore Features</a>
                 </div>
             </div>
         </section>
 
+
+        <div id="popupBox" class="popup-overlay">
+            <div class="popup-content">
+                <h2>Please Sign-In / Sign-Up First</h2>
+                <p>You need an account to apply for jobs.</p>
+                <button class="close-btn" id="closePopup">Okay</button>
+            
+            </div>
+        </div>
         
 
         <!-- 3) Key Features -->
@@ -76,21 +87,21 @@
                         <p class="company">Tech Solutions Inc.</p>
                         <p class="location">Remote</p>
                         <p class="description">Build responsive UI with React and modern tooling.</p>
-                        <a href="#" class="btn btn-primary">Apply Now</a>
+                        
                     </article>
                     <article class="job-item">
                         <h3>Data Analyst</h3>
                         <p class="company">Data Insights</p>
                         <p class="location">Surat</p>
                         <p class="description">Transform data into business decisions and insights.</p>
-                        <a href="#" class="btn btn-primary">Apply Now</a>
+                        
                     </article>
                     <article class="job-item">
                         <h3>Mobile Engineer</h3>
                         <p class="company">AppWorks</p>
                         <p class="location">Ahmedabad</p>
                         <p class="description">Deliver delightful mobile experiences at scale.</p>
-                        <a href="#" class="btn btn-primary">Apply Now</a>
+                        
                     </article>
                 </div>
             </div>
@@ -132,6 +143,33 @@
             <p>&copy; 2025 CareerLink. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const popup = document.getElementById("popupBox");
+            const closeBtn = document.getElementById("closePopup");
+            const searchBtn = document.getElementById("searchJobsBtn");
+
+            // When user clicks "Search Jobs"
+            searchBtn.addEventListener("click", function (e) {
+                e.preventDefault(); // stop the #search jump
+                popup.style.display = "flex";
+            });
+
+            // Close popup
+            closeBtn.addEventListener("click", function () {
+                popup.style.display = "none";
+            });
+
+            // Close when clicking outside the box
+            popup.addEventListener("click", function (e) {
+                if (e.target === popup) popup.style.display = "none";
+            });
+
+        });
+    </script>
+
 
     <script src="../landing-common.js"></script>
     <!-- Note: Script is standalone and mirrors project interactions (menu toggle, form). -->

@@ -40,6 +40,7 @@
               <th>Number</th>
               <th>Role</th>
               <th>Location</th>
+              <!-- <th>Action</th> -->
             </tr>
           </thead>
           <tbody>
@@ -53,8 +54,7 @@
     
                       
                       <!-- <td>
-                        <button class="btn btn-outline btn-sm">View</button>
-                        <button class="btn btn-outline btn-sm">Suspend</button>
+                        <a href="{{ route('removeUser',$users->id) }}" class="btn btn-outline btn-sm">Delete</a>
                       </td> -->
                     
                 @endforeach

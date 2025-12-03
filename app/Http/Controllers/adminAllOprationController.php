@@ -41,4 +41,28 @@ class adminAllOprationController extends Controller
         $applications = applyJobModel::paginate(10);
         return view('admin.jobAplications', compact('applications'));
     }
+
+    //Delete User 
+    public function removeUser($id)  {
+        $user = User::where('id', $id)->first();
+        $user->delete();
+        return back();        
+    }
+
+    //Delete Job
+    public function removeJobs($id)  {
+        $jobs = jobPostModel::where('id', $id)->first();
+        $jobs->active_or_not = '0';
+        $jobs->save();
+        return back();
+    }
+
+    //active job 
+    public function activeJobs($id){
+        $jobs = jobPostModel::where('id', $id)->first();
+        $jobs->active_or_not = '1';
+        $jobs->save();
+        return back();
+    }
+
 }

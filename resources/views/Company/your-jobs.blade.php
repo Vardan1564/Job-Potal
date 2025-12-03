@@ -51,24 +51,32 @@
   <section class="job-listings-section">
     <div class="container job-grid">
 
-    @foreach ($jobs as $job )
-    
-    <article class="job-card">
-        <div class="job-header">
-            <img src="/ProfilePhotos/{{ $job->profile_photo }}" alt="TechNova Logo" class="company-logo">
-            <div>
-                <h3>{{ $job->jobtitle }}</h3>
-                <p class="job-meta">{{ $job->company_name }} • {{ $job->state }} • {{ $job->city }}</p>
-            </div>
-        </div>
-        <p class="job-meta">{{ $job->jobtype }} • {{ $job->experience_level }}</p>
-        <p class="job-desc">{{ $job->job_description }}</p>
-        <div class="card-actions">
-            <a href="{{ route('viewApplicants',$job->id) }}" class="btn btn-outline">View Applications</a>
-            <a href="user-apply.html" class="btn btn-primary">Edit Post</a>
-        </div>
-    </article>
-    
+    @foreach ($jobs as $job)
+
+      <article class="job-card">
+          <div class="job-header">
+              <img src="/ProfilePhotos/{{ $job->profile_photo }}" alt="TechNova Logo" class="company-logo">
+              <div>
+                  <h3>{{ $job->jobtitle }}</h3>
+                  <p class="job-meta">{{ $job->company_name }} • {{ $job->state }} • {{ $job->city }}</p>
+              </div>
+          </div>
+          <p class="job-meta">{{ $job->jobtype }} • {{ $job->experience_level }}</p>
+          <p class="job-desc">{{ $job->job_description }}</p>
+          <div class="card-actions">
+              <a href="{{ route('viewApplicants', $job->id) }}" class="btn btn-outline">View Applications</a>
+              <a href="{{ route('activeDeactivate',$job->id) }}" class="btn btn-primary">
+              @if ($job->active_or_not == '1')
+                active
+              @else
+                Deactivate
+
+              @endif
+
+              </a>
+          </div>
+      </article>
+
     @endforeach
       
 

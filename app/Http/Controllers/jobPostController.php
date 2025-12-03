@@ -18,7 +18,7 @@ class jobPostController extends Controller
 
     public function jobpost_save(Request $request){
 
-         $validatedData = $request->validate([
+       $request->validate([
             'jobtitle'          => 'required|string|max:255',
             'city'              => 'required|string|max:100',
             'state'             => 'required|string|max:100',
@@ -55,20 +55,20 @@ class jobPostController extends Controller
 
     // list job posts for seeker
     public function list_jobs(){
-        $jobs = jobPostModel::where('active_or_not', 1)->get();
+        $jobs = jobPostModel::where('active_or_not', '1')->latest()->get();
         return view('User.job-listings', compact('jobs'));
     }
 
     // list job posts for loged-in company
     public function company_jobs(){
         $company = Auth::user();
-        $jobs = jobPostModel::where('company_id', $company->id)->get();
+        $jobs = jobPostModel::where('company_id', $company->id)->latest()->get();
         return view('Company.your-jobs', compact('jobs'));
     }
 
     // list job posts for company page
     public function list_jobs_for_company_page(){
-        $jobs = jobPostModel::where('active_or_not', 1)->get();
+        $jobs = jobPostModel::where('active_or_not', 1)->latest()->get();
         return view('company.all-company-jobs', compact('jobs'));
     }
 
@@ -80,7 +80,23 @@ class jobPostController extends Controller
 
     // see your post's applicants applications
     public function viewApplicants($id){
-            $applications = applyJobModel::where('J_ID', $id)->get();
+            $applications = applyJobModel::where('J_ID', $id)->latest()->get();
             return view('company.applicants', compact('applications'));
     }
+
+    //active or Deactivate job post
+    public function activeDeactivate($id){
+        $jobs = jobPostModel::where('id', $id)->first();
+        
+        if($jobs->active_or_not == '1')
+        {
+            $jobs->active_or_not = '0';
+        }
+        else{
+            $jobs->active_or_not= '1';
+        }
+
+        $jobs->save();
+        return back();
+    }    
 }

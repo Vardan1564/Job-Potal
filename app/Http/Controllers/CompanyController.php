@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\jobPostModel;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -51,5 +52,11 @@ class CompanyController extends Controller
 
     return redirect()->route('Cprofile')->with('success', 'Profile updated successfully.');
 
+    }
+
+    public function job_detail($id)
+    {
+        $job = jobPostModel::where('id', $id)->first();
+        return view('company.CjobDetaile', compact('job'));
     }
 }

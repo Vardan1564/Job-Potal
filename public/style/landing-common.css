@@ -113,6 +113,58 @@ body { min-height: 100vh; }
 /* ===== FOOTER ===== */
 .footer { background:#2c3e50; color:#fff; padding:40px 0; text-align:center; font-size:1rem; }
 
+/* ====== popup ========== */
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Popup Box */
+.popup-content {
+    background: #ffffff;
+    width: 350px;
+    text-align: center;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.3s ease;
+}
+
+/* Heading */
+.popup-content h2 {
+    font-size: 20px;
+    color: #1A73E8; /* Blue tone */
+    margin-bottom: 10px;
+}
+
+/* Button - Close */
+.close-btn {
+    padding: 10px 18px;
+    background: #1A73E8;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+/* Button - Trigger */
+.open-btn {
+    padding: 10px 18px;
+    background: #1A73E8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+}
+
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .header-main { padding: 15px 40px; }

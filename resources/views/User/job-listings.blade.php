@@ -63,38 +63,20 @@
   <!-- Filters -->
   <section class="filter-section" aria-label="Search filters">
     <div class="container">
-      <form class="filters">
+      <form class="filters"  method="post" action="{{ route('searchJobList') }}">
+
+      @csrf
         <div class="filter-group">
           <label for="searchTitle">Job Title/Keyword</label>
-          <input type="text" id="searchTitle" placeholder="e.g. Frontend, Designer" />
+          <input type="text" id="searchTitle" name="searchJobTitle" placeholder="e.g. Frontend, Designer" />
         </div>
-        <div class="filter-group">
-          <label for="searchLocation">Location</label>
-          <input type="text" id="searchLocation" placeholder="e.g. Mumbai, Remote" />
-        </div>
-        <div class="filter-group">
-          <label for="filterType">Type</label>
-          <select id="filterType">
-            <option>Any</option>
-            <option>Full-time</option>
-            <option>Part-time</option>
-            <option>Contract</option>
-            <option>Internship</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label for="filterExperience">Experience</label>
-          <select id="filterExperience">
-            <option>Any</option>
-            <option>Entry</option>
-            <option>Mid</option>
-            <option>Senior</option>
-          </select>
-        </div>
+        
+        
         <div class="filter-actions">
-          <button type="button" class="btn btn-primary">Search</button>
+          <button type="submit" class="btn btn-primary">Search</button>
           <button type="reset" class="btn btn-outline">Reset</button>
         </div>
+        
       </form>
     </div>
   </section>

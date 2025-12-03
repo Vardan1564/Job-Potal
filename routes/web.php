@@ -9,6 +9,7 @@ use App\Http\Controllers\userController;
 use App\Http\Controllers\internshipsController;
 use App\Http\Controllers\adminAllOprationController;
 use App\Http\Controllers\applyJobController;
+use App\Http\Controllers\searchOprationController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -92,8 +93,14 @@ Route::get('/job-listings',[jobPostController::class,'list_jobs'])->name('jobLis
 // company(loged in) job posts
 Route::get('/your-jobs',[jobPostController::class,'company_jobs'])->name('companyJobs');
 
+//company(loged in) job posts active or Deactivate
+Route::get('activeOrDeactive/job/{id}',[jobPostController::class,'activeDeactivate'])->name("activeDeactivate");
+
 // all company jobs for company 
 Route::get('/all-company-jobs',[jobPostController::class,'list_jobs_for_company_page'])->name('allCompanyJobs');
+
+//job detail page
+Route::get('/job-detail-for-company/{id}',[CompanyController::class,'job_detail'])->name('jobDetailForCompany');    
 
 // internships page
 Route::get('/internships',[internshipsController::class,'showInternships'])->name('internships');
@@ -130,3 +137,15 @@ Route::get('/company/applicant/profile/{id}',[applyJobController::class,'applica
 
 //admin applications management
 Route::get('/admin/manage-applications',[adminAllOprationController::class,'manageApplications'])->name('adminManageApplications');
+
+//admin delete user
+Route::get('user/delete/{id}',[adminAllOprationController::class,'removeUser'])->name('removeUser');
+
+//admin Deactivate job post
+Route::get('jobPost/delete/{id}',[adminAllOprationController::class,'removeJobs'])->name('removeJobs');
+
+//admin active job post
+Route::get('job/active/{id}',[adminAllOprationController::class,'activeJobs'])->name('activeJobs');
+
+// serch Job
+Route::post('/job/searchJobList',[searchOprationController::class,'searchJobList'])->name('searchJobList');

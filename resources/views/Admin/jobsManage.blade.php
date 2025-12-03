@@ -51,27 +51,40 @@
               <th>Salary Range</th>
               <th>Location</th>
               <th>Job Deadline</th>
+              <th>Status</th>
               <th>Actions</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             @foreach ($jobs as $job)
-                    <tr>
-                      <td>{{ $job->jobtitle }}</td>
-                      <td>{{ $job->company_name }}</td>
-                      <td>{{ $job->Email }}</td>
-                      <td>{{ $job->experience_level }}</td>
-                      <td>{{ $job->salary_range }}</td>
-                      <td>{{ $job->city }},{{ $job->state }}</td>
-                      <td>{{ $job->job_deadline }}</td>
-                      <!-- <td>{{ $job->active_or_not }}</td> -->
-    
-                      
-                      <td>
-                        <button class="btn btn-outline btn-sm">Edit</button>
-                      </td>
-                    
-                @endforeach
+              <tr>
+                <td>{{ $job->jobtitle }}</td>
+                <td>{{ $job->company_name }}</td>
+                <td>{{ $job->Email }}</td>
+                <td>{{ $job->experience_level }}</td>
+                <td>{{ $job->salary_range }}</td>
+                <td>{{ $job->city }},{{ $job->state }}</td>
+                <td>{{ $job->job_deadline }}</td>
+                <!-- <td>{{ $job->active_or_not }}</td> -->
+                <td>
+
+                  @if ($job->active_or_not == '0')
+                    Deactivate
+                    @else
+                    Activate
+
+                  @endif
+                </td>
+
+                <td>
+                      <a href="{{ route('activeJobs', $job->id) }}" class="btn btn-outline btn-sm">Activate</a> 
+                  <td>
+                    <a href="{{ route('removeJobs', $job->id) }}" class="btn btn-outline btn-sm">Deactivate</a>
+
+                </td></td>
+
+            @endforeach
           </tbody>
         </table>
       </div>

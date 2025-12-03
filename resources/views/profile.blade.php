@@ -38,7 +38,7 @@
 
         <!-- Header -->
         <header class="profileHeader" role="banner">
-            <a href="#" class="logoImg">
+            <a href="{{ route('user') }}" class="logoImg">
                 <img src="../Images/Logo/logo_2.png" alt="CareerLink logo" />
             </a>
             <nav

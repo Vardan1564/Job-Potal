@@ -47,7 +47,7 @@
                 <h2>Meet the Team</h2>
                 <div class="team-members">
                     <div class="member">
-                        <img src="../Images/Img/iron_man.png" alt="Student 1" />
+                        <img src="../Images/team/brijesh.jpg" alt="Student 1" />
                         <h4>Brijesh</h4>
                         <p>Frontend Developer & UI Designer</p>
                     </div>
@@ -57,9 +57,9 @@
                         <p>Backend Developer & Database Manager</p>
                     </div>
                     <div class="member">
-                        <img src="../Images/Img/iron_man.png" alt="Student 3" />
+                        <img src="../Images/team/jaxit.jpg" alt="Student 3" />
                         <h4>Jaxit</h4>
-                        <p>Project Manager & QA Tester</p>
+                        <p>QA Tester & Documentation Specialist</p>
                     </div>
                 </div>
             </div>
